@@ -1,0 +1,33 @@
+### Список рецептов
+GET http://localhost:8080/api/recipes
+
+### Рецепт по id
+GET http://localhost:8080/api/recipes/1
+
+### Рецепт по слагу
+GET http://localhost:8080/api/recipes/slug/borscht
+
+### Добавить рецепт
+POST http://localhost:8080/api/recipes
+Content-Type: application/json
+
+{
+  "authorId": 1,
+  "slug": "bliny",
+  "name": "Блины",
+  "ingredients": "молоко, яйца, мука, сахар, соль, масло",
+  "instructions": "Смешать жидкие ингредиенты, всыпать муку и пожарить тонкие блины.",
+  "cookingTimeMinutes": 30
+}
+
+### Редактировать рецепт
+PUT http://localhost:8080/api/recipes/1
+Content-Type: application/json
+
+{
+  "name": "Борщ украинский",
+  "cookingTimeMinutes": 100
+}
+
+### Удалить рецепт
+DELETE http://localhost:8080/api/recipes/3
